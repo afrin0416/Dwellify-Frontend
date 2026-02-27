@@ -1,9 +1,13 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000",
-}, { withCredentials: true });
+// const API = axios.create({
+//   baseURL: import.meta.env.VITE_API_URL || "https://dwellify-bice.vercel.app/",           
+// }, { withCredentials: true });
 
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "https://dwellify-bice.vercel.app",
+  withCredentials: true,
+});
 // Attach access token
 API.interceptors.request.use((config) => {
   const tokens = JSON.parse(localStorage.getItem("tokens") || "null");

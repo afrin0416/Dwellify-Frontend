@@ -107,13 +107,13 @@ export default function AdminAdvertisements() {
                   <>
                     <button
                       onClick={() => approve(ad.id, "approved")}
-                      className="btn-success !py-1.5 !px-3 !text-xs"
+                      className="btn-success py-1.5! px-3!!text-xs"
                     >
                       <CheckCircle size={14} /> Approve
                     </button>
                     <button
                       onClick={() => approve(ad.id, "rejected")}
-                      className="btn-danger !py-1.5 !px-3 !text-xs"
+                      className="btn-danger py-1.5! px-3! text-xs!"
                     >
                       <XCircle size={14} /> Reject
                     </button>
