@@ -5,7 +5,7 @@ import { adsAPI } from "../../api/endpoints";
 import AdvertisementCard from "../advertisements/AdvertisementCard";
 import LoadingSpinner from "../common/LoadingSpinner";
 
-const Featureddist = () => {
+const FeaturedListings = () => {
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -59,4 +59,4 @@ const Featureddist = () => {
   );
 };
 
-export default Featureddist;
+export default FeaturedListings;
