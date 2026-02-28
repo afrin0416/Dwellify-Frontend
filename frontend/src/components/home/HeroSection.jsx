@@ -26,10 +26,10 @@ const HeroSection = () => {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                to="/listings"
+                to="/dist"
                 className="btn-primary bg-white! text-primary-700! hover:bg-primary-50!"
               >
-                <Search size={18} /> Browse Listings
+                <Search size={18} /> Browse dist
               </Link>
               <Link
                 to="/register"

@@ -47,13 +47,13 @@ const Navbar = () => {
 
           {/* Desktop links */}
           <div className="hidden items-center gap-6 md:flex">
-            <NavLink to="/listings" className={navLinkClass}>
+            <NavLink to="/dist" className={navLinkClass}>
               <Search size={16} /> Browse
             </NavLink>
 
             {isAuthenticated && (
               <>
-                <NavLink to="/listings/create" className={navLinkClass}>
+                <NavLink to="/dist/create" className={navLinkClass}>
                   <PlusCircle size={16} /> Post Ad
                 </NavLink>
                 <NavLink to="/favorites" className={navLinkClass}>
@@ -107,11 +107,11 @@ const Navbar = () => {
                       <User size={15} /> Profile
                     </Link>
                     <Link
-                      to="/my-listings"
+                      to="/my-dist"
                       onClick={close}
                       className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                     >
-                      <Home size={15} /> My Listings
+                      <Home size={15} /> My dist
                     </Link>
                     <Link
                       to="/my-rent-requests"
@@ -181,14 +181,14 @@ const Navbar = () => {
         {mobileOpen && (
           <div className="border-t border-gray-100 bg-white px-4 pb-4 md:hidden">
             <div className="flex flex-col gap-3 pt-3">
-              <NavLink to="/listings" onClick={close} className={navLinkClass}>
-                <Search size={16} /> Browse Listings
+              <NavLink to="/dist" onClick={close} className={navLinkClass}>
+                <Search size={16} /> Browse dist
               </NavLink>
 
               {isAuthenticated ? (
                 <>
                   <NavLink
-                    to="/listings/create"
+                    to="/dist/create"
                     onClick={close}
                     className={navLinkClass}
                   >
@@ -209,11 +209,11 @@ const Navbar = () => {
                     <User size={16} /> Profile
                   </NavLink>
                   <NavLink
-                    to="/my-listings"
+                    to="/my-dist"
                     onClick={close}
                     className={navLinkClass}
                   >
-                    <Home size={16} /> My Listings
+                    <Home size={16} /> My dist
                   </NavLink>
                   <NavLink
                     to="/my-rent-requests"

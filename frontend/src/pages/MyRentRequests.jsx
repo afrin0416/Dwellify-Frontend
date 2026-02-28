@@ -12,7 +12,8 @@ export default function MyRentRequests() {
   const [paying, setPaying] = useState(null);
 
   useEffect(() => {
-    rentAPI.mine()
+    rentAPI
+      .mine()
       .then((r) => setRequests(r.data.results || r.data))
       .catch(() => toast.error("Failed to load."))
       .finally(() => setLoading(false));
@@ -42,8 +43,8 @@ export default function MyRentRequests() {
       {requests.length === 0 ? (
         <div className="card mt-8 py-16 text-center">
           <p className="text-gray-400">No rent requests yet.</p>
-          <Link to="/listings" className="btn-primary mt-4 inline-flex">
-            Browse Listings
+          <Link to="/dist" className="btn-primary mt-4 inline-flex">
+            Browse dist
           </Link>
         </div>
       ) : (
@@ -53,7 +54,7 @@ export default function MyRentRequests() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <Link
-                    to={`/listings/${rr.advertisement}`}
+                    to={`/dist/${rr.advertisement}`}
                     className="text-lg font-semibold text-primary-700 hover:underline"
                   >
                     {rr.advertisement_title}

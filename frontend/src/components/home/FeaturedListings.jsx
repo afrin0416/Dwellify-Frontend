@@ -5,7 +5,7 @@ import { adsAPI } from "../../api/endpoints";
 import AdvertisementCard from "../advertisements/AdvertisementCard";
 import LoadingSpinner from "../common/LoadingSpinner";
 
-const FeaturedListings = () => {
+const Featureddist = () => {
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,13 +22,13 @@ const FeaturedListings = () => {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="section-title">Featured Listings</h2>
+            <h2 className="section-title">Featured dist</h2>
             <p className="section-subtitle">
               Hand-picked properties waiting for you
             </p>
           </div>
           <Link
-            to="/listings"
+            to="/dist"
             className="hidden items-center gap-1 text-sm font-semibold text-primary-600 transition hover:text-primary-800 sm:flex"
           >
             View all <ArrowRight size={16} />
@@ -39,7 +39,7 @@ const FeaturedListings = () => {
           <LoadingSpinner />
         ) : ads.length === 0 ? (
           <p className="mt-10 text-center text-gray-400">
-            No listings yet. Be the first to post!
+            No dist yet. Be the first to post!
           </p>
         ) : (
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -50,8 +50,8 @@ const FeaturedListings = () => {
         )}
 
         <div className="mt-8 text-center sm:hidden">
-          <Link to="/listings" className="btn-secondary">
-            View all listings <ArrowRight size={16} />
+          <Link to="/dist" className="btn-secondary">
+            View all dist <ArrowRight size={16} />
           </Link>
         </div>
       </section>
@@ -59,4 +59,4 @@ const FeaturedListings = () => {
   );
 };
 
-export default FeaturedListings;
+export default Featureddist;

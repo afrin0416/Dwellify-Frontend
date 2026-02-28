@@ -10,7 +10,7 @@ const steps = [
   {
     icon: Search,
     title: "Find a Property",
-    desc: "Browse and filter hundreds of rental listings.",
+    desc: "Browse and filter hundreds of rental dist.",
     color: "bg-emerald-100 text-emerald-600",
   },
   {

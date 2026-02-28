@@ -25,8 +25,8 @@ const Footer = () => {
                 Dwellify
               </Link>
               <p className="mt-3 text-sm leading-relaxed text-gray-400">
-                Find your perfect rental home with ease. Post listings, send
-                rent requests, and manage payments — all in one place.
+                Find your perfect rental home with ease. Post dist, send rent
+                requests, and manage payments — all in one place.
               </p>
               <div className="mt-5 flex gap-3">
                 {[Facebook, Twitter, Github].map((Icon, i) => (
@@ -48,8 +48,8 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2 text-sm">
                 {[
-                  ["/listings", "Browse Listings"],
-                  ["/listings/create", "Post an Ad"],
+                  ["/dist", "Browse dist"],
+                  ["/dist/create", "Post an Ad"],
                   ["/favorites", "My Favorites"],
                   ["/my-rent-requests", "My Requests"],
                 ].map(([to, label]) => (

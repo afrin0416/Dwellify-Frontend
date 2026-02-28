@@ -54,7 +54,7 @@ export default function ReceivedRentRequests() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <Link
-                    to={`/listings/${rr.advertisement}`}
+                    to={`/dist/${rr.advertisement}`}
                     className="font-semibold text-primary-700 hover:underline"
                   >
                     {rr.advertisement_title}

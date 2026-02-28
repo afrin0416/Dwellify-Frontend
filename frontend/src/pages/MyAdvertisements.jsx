@@ -12,7 +12,8 @@ export default function MyAdvertisements() {
 
   const fetch = () => {
     setLoading(true);
-    adsAPI.mine()
+    adsAPI
+      .mine()
       .then((r) => setAds(r.data.results || r.data))
       .catch(() => toast.error("Failed to load."))
       .finally(() => setLoading(false));
@@ -23,8 +24,8 @@ export default function MyAdvertisements() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900">My Listings</h1>
-        <Link to="/listings/create" className="btn-primary">
+        <h1 className="text-2xl font-bold text-gray-900">My dist</h1>
+        <Link to="/dist/create" className="btn-primary">
           <PlusCircle size={18} /> New Listing
         </Link>
       </div>
@@ -33,8 +34,10 @@ export default function MyAdvertisements() {
         <LoadingSpinner />
       ) : ads.length === 0 ? (
         <div className="card mt-10 py-20 text-center">
-          <p className="text-lg text-gray-400">You haven't posted any listings yet.</p>
-          <Link to="/listings/create" className="btn-primary mt-4 inline-flex">
+          <p className="text-lg text-gray-400">
+            You haven't posted any dist yet.
+          </p>
+          <Link to="/dist/create" className="btn-primary mt-4 inline-flex">
             <PlusCircle size={18} /> Create your first listing
           </Link>
         </div>

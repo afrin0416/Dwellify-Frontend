@@ -34,15 +34,15 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/listings" element={<AdvertisementList />} />
-          <Route path="/listings/:id" element={<AdvertisementDetail />} />
+          <Route path="/dist" element={<AdvertisementList />} />
+          <Route path="/dist/:id" element={<AdvertisementDetail />} />
 
           {/* Auth required */}
           <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/listings/create" element={<AdvertisementCreate />} />
-            <Route path="/listings/:id/edit" element={<AdvertisementEdit />} />
-            <Route path="/my-listings" element={<MyAdvertisements />} />
+            <Route path="/dist/create" element={<AdvertisementCreate />} />
+            <Route path="/dist/:id/edit" element={<AdvertisementEdit />} />
+            <Route path="/my-dist" element={<MyAdvertisements />} />
             <Route path="/my-rent-requests" element={<MyRentRequests />} />
             <Route
               path="/received-requests"

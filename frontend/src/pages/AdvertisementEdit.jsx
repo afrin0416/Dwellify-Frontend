@@ -15,14 +15,24 @@ export default function AdvertisementEdit() {
   const [imageFile, setImageFile] = useState(null);
 
   const [form, setForm] = useState({
-    title: "", description: "", category: "",
-    address: "", city: "", state: "", zip_code: "",
-    rent_amount: "", bedrooms: 1, bathrooms: 1,
+    title: "",
+    description: "",
+    category: "",
+    address: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    rent_amount: "",
+    bedrooms: 1,
+    bathrooms: 1,
     area_sqft: "",
   });
 
   useEffect(() => {
-    categoryAPI.list().then((r) => setCategories(r.data.results || r.data)).catch(() => {});
+    categoryAPI
+      .list()
+      .then((r) => setCategories(r.data.results || r.data))
+      .catch(() => {});
     adsAPI
       .detail(id)
       .then((r) => {
@@ -61,11 +71,13 @@ export default function AdvertisementEdit() {
     setSaving(true);
     try {
       const fd = new FormData();
-      Object.entries(form).forEach(([k, v]) => { if (v !== "" && v !== null) fd.append(k, v); });
+      Object.entries(form).forEach(([k, v]) => {
+        if (v !== "" && v !== null) fd.append(k, v);
+      });
       if (imageFile) fd.append("image", imageFile);
       await adsAPI.update(id, fd);
       toast.success("Listing updated!");
-      navigate(`/listings/${id}`);
+      navigate(`/dist/${id}`);
     } catch (err) {
       toast.error("Failed to update.");
     } finally {
@@ -84,66 +96,137 @@ export default function AdvertisementEdit() {
       <form onSubmit={handleSubmit} className="card mt-6 space-y-5 p-6">
         <div>
           <label className="mb-1 block text-sm font-medium">Title</label>
-          <input required className="input-field" value={form.title} onChange={set("title")} />
+          <input
+            required
+            className="input-field"
+            value={form.title}
+            onChange={set("title")}
+          />
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium">Description</label>
-          <textarea required rows={4} className="input-field" value={form.description} onChange={set("description")} />
+          <textarea
+            required
+            rows={4}
+            className="input-field"
+            value={form.description}
+            onChange={set("description")}
+          />
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label className="mb-1 block text-sm font-medium">Category</label>
-            <select className="input-field" value={form.category} onChange={set("category")}>
+            <select
+              className="input-field"
+              value={form.category}
+              onChange={set("category")}
+            >
               <option value="">Select…</option>
-              {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+              {categories.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
             </select>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium">Rent (৳)</label>
-            <input required type="number" className="input-field" value={form.rent_amount} onChange={set("rent_amount")} />
+            <input
+              required
+              type="number"
+              className="input-field"
+              value={form.rent_amount}
+              onChange={set("rent_amount")}
+            />
           </div>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium">Address</label>
-          <input required className="input-field" value={form.address} onChange={set("address")} />
+          <input
+            required
+            className="input-field"
+            value={form.address}
+            onChange={set("address")}
+          />
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
             <label className="mb-1 block text-sm font-medium">City</label>
-            <input required className="input-field" value={form.city} onChange={set("city")} />
+            <input
+              required
+              className="input-field"
+              value={form.city}
+              onChange={set("city")}
+            />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium">State</label>
-            <input className="input-field" value={form.state} onChange={set("state")} />
+            <input
+              className="input-field"
+              value={form.state}
+              onChange={set("state")}
+            />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium">Zip</label>
-            <input className="input-field" value={form.zip_code} onChange={set("zip_code")} />
+            <input
+              className="input-field"
+              value={form.zip_code}
+              onChange={set("zip_code")}
+            />
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
             <label className="mb-1 block text-sm font-medium">Bedrooms</label>
-            <input type="number" min={0} className="input-field" value={form.bedrooms} onChange={set("bedrooms")} />
+            <input
+              type="number"
+              min={0}
+              className="input-field"
+              value={form.bedrooms}
+              onChange={set("bedrooms")}
+            />
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium">Bathrooms</label>
-            <input type="number" min={0} className="input-field" value={form.bathrooms} onChange={set("bathrooms")} />
+            <input
+              type="number"
+              min={0}
+              className="input-field"
+              value={form.bathrooms}
+              onChange={set("bathrooms")}
+            />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium">Area (sqft)</label>
-            <input type="number" className="input-field" value={form.area_sqft} onChange={set("area_sqft")} />
+            <label className="mb-1 block text-sm font-medium">
+              Area (sqft)
+            </label>
+            <input
+              type="number"
+              className="input-field"
+              value={form.area_sqft}
+              onChange={set("area_sqft")}
+            />
           </div>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium">Image</label>
           <label className="flex cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-6 hover:border-primary-400">
             {preview ? (
-              <img src={preview} alt="Preview" className="h-40 rounded-lg object-cover" />
+              <img
+                src={preview}
+                alt="Preview"
+                className="h-40 rounded-lg object-cover"
+              />
             ) : (
               <Upload size={32} className="text-gray-400" />
             )}
-            <input type="file" accept="image/*" className="hidden" onChange={handleImage} />
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleImage}
+            />
           </label>
         </div>
         <button type="submit" disabled={saving} className="btn-primary w-full">

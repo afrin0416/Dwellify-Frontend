@@ -1,6 +1,6 @@
 import HeroSection from "../components/home/HeroSection";
 import SearchSection from "../components/home/SearchSection";
-import FeaturedListings from "../components/home/FeaturedListings";
+import Featureddist from "../components/home/Featureddist";
 import CategoriesSection from "../components/home/CategoriesSection";
 import HowItWorks from "../components/home/HowItWorks";
 import StatsSection from "../components/home/StatsSection";
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <HeroSection />
       <SearchSection />
-      <FeaturedListings />
+      <Featureddist />
       <CategoriesSection />
       <HowItWorks />
       <StatsSection />

@@ -18,7 +18,7 @@ const SearchSection = () => {
     if (filters.city) params.set("city", filters.city);
     if (filters.max_rent) params.set("max_rent", filters.max_rent);
     if (filters.bedrooms) params.set("bedrooms", filters.bedrooms);
-    navigate(`/listings?${params.toString()}`);
+    navigate(`/dist?${params.toString()}`);
   };
   return (
     <>

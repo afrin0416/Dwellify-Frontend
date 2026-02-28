@@ -40,7 +40,7 @@ const CategoriesSection = () => {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => navigate(`/listings?category=${cat.id}`)}
+                  onClick={() => navigate(`/dist?category=${cat.id}`)}
                   className="card group flex flex-col items-center gap-3 p-6 text-center
                            transition hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                 >

@@ -302,10 +302,7 @@ export default function AdvertisementDetail() {
           {isOwner && (
             <div className="card space-y-3 p-5">
               <h3 className="font-semibold text-gray-900">Manage Listing</h3>
-              <Link
-                to={`/listings/${ad.id}/edit`}
-                className="btn-secondary w-full"
-              >
+              <Link to={`/dist/${ad.id}/edit`} className="btn-secondary w-full">
                 <Edit size={16} /> Edit
               </Link>
               <Link to="/received-requests" className="btn-primary w-full">

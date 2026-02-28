@@ -54,7 +54,7 @@ export default function AdvertisementCreate() {
 
       const { data } = await adsAPI.create(fd);
       toast.success("Listing created! Awaiting admin approval.");
-      navigate(`/listings/${data.id}`);
+      navigate(`/dist/${data.id}`);
     } catch (err) {
       const errors = err.response?.data;
       if (errors) {

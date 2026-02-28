@@ -89,7 +89,7 @@ export default function AdminAdvertisements() {
                 />
                 <div>
                   <Link
-                    to={`/listings/${ad.id}`}
+                    to={`/dist/${ad.id}`}
                     className="font-semibold text-gray-900 hover:text-primary-600"
                   >
                     {ad.title}

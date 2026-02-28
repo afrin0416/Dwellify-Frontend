@@ -93,9 +93,7 @@ export default function AdvertisementList() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
-              Browse Listings
-            </h1>
+            <h1 className="text-2xl font-bold text-gray-900">Browse dist</h1>
             <p className="text-sm text-gray-500">
               {pagination.count || 0} properties found
             </p>
@@ -223,14 +221,14 @@ export default function AdvertisementList() {
             </form>
           </aside>
 
-          {/* Listings grid */}
+          {/* dist grid */}
           <div className="flex-1">
             {loading ? (
               <LoadingSpinner />
             ) : ads.length === 0 ? (
               <div className="card py-20 text-center">
                 <p className="text-lg font-semibold text-gray-400">
-                  No listings found
+                  No dist found
                 </p>
                 <p className="mt-1 text-sm text-gray-400">
                   Try adjusting your filters

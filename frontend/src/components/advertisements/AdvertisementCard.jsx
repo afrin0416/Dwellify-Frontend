@@ -7,7 +7,7 @@ const placeholder =
 
 const AdvertisementCard = ({ ad, showStatus = false }) => {
   return (
-    <Link to={`/listings/${ad.id}`} className="card group overflow-hidden">
+    <Link to={`/dist/${ad.id}`} className="card group overflow-hidden">
       {/* Image */}
       <div className="relative aspect-4/3 overflow-hidden">
         <img
